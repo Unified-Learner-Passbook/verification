@@ -6,7 +6,7 @@ const routes: Routes = [
 
 { path: '', component: VerifyCertificateComponent },
 
-// { path: 'verify-certificate', component: VerifyCertificateComponent },
+{ path: 'verify-certificate', component: VerifyCertificateComponent },
 
 ];
 
