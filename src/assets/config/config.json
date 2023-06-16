@@ -8,7 +8,7 @@
       "configFolder": "/assets/config/ui-config",
       "languageFolder": "/assets/i18n",
       "title": "Organ donation registry",
-      "baseUrl": "http://localhost:4200/registry/api/v1",
+      "baseUrl": "https://demo-nha-donor-registry.xiv.in/registry/api/v1",
         "domainName" : "https://demo-nha-donor-registry.xiv.in",
       "schemaUrl": "http://localhost:4200/registry/api/docs/swagger.json",
       "footerText": "Organ donation registry",

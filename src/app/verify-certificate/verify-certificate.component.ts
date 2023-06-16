@@ -18,26 +18,30 @@ export class VerifyCertificateComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    console.log("scanner is running")
 
     this.itemData =
     {
       "scanner_type": "ZBAR_QRCODE",
       "showResult": [
-        { "title": "Name", "path": "credentialSubject.name" },
-        { "title": "Father Name", "path": "credentialSubject.fatherName" },
-        { "title": "Date of Issuance", "path": "issuanceDate",  'type' : 'date' },
-        { "title": "ABHA Number", "path": "credentialSubject.id",  "removeStr" : "did:abha:" },
-        { "title": "NOTTO ID", "path": "credentialSubject.nottoId" },
-        { "title": "Organs", "path": "credentialSubject.pledge.organs" },
-        { "title": "Tissues", "path": "credentialSubject.pledge.tissues" },
-        {  "title": "Emergency Contact Details", "path": "credentialSubject.emergency.mobileNumber" }
+        { "title": "Name", "path": "name" },
+        { "title": "Gender", "path": "gender" },
+        { "title": "Institute", "path": "institute" },
+        { "title": "AcademicYear", "path": "academicYear" },
+        { "title": "RollNo", "path": "rollNo" },
+      
       ],
-      "scanNote": "To verify pledge certificate, simply scan the QR code thats on the document.",
-      "certificateTitle": 'Pledge Certificate',
+      "scanNote": "To verify certificate, simply scan the QR code thats on the document.",
+      "certificateTitle": 'Certificate',
       "verify_another_Certificate": 'Verify another Certificate',
       "cetificate_not_valid": 'This Certificate is not valid',
-      "scan_qrcode_again": "Please scan QR code again"
+      "scan_qrcode_again": "Please scan QR code again",
+      "invalid_qrcode": "This Certificate is not valid",
+      "route": "benefit"
+
     }
+
+    console.log("itemData", this.itemData)
 
   }
 
