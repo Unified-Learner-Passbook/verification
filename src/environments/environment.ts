@@ -6,7 +6,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: '',
+  baseUrl: 'http://localhost:3000',
   schemaUrl: 'assets/config/schema.json', //asset path OR URL
   logo: 'assets/images/logo.png', //asset path OR URL
   keycloakConfig: {

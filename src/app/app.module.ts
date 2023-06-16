@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { VerifyModule } from 'vc-verification';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { VerifyCertificateComponent } from './verify-certificate/verify-certificate.component';
+import { environment } from '../environments/environment';
 
 // let baseConfig = require('../assets/config/config.json')
 
@@ -14,7 +15,7 @@ import { VerifyCertificateComponent } from './verify-certificate/verify-certific
 // }
 
 let configData = {
-  baseUrl: 'http://localhost:4200/registry/api/v1'
+  baseUrl: `${environment.baseUrl}/auth`
 }
 
 
