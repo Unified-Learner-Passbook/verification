@@ -167,6 +167,7 @@ textarea.form-control {
     border: 0 !important;
 
 }
+
 .vc-btnPrimary {
     background: #D9552B !important;
 }
@@ -1460,14 +1461,18 @@ formly-multi-schema-type .card {
     background-color: #b0b8b3;
 }
 
-.form-check-input:disabled  {
+.form-check-input:disabled {
     opacity: 0.2 !important;
 }
 
-.mlf-14{
+.mlf-14 {
     margin-left: -14px !important;
 }
 
 :disabled {
     opacity: 0.4;
-  }
+}
+
+.vc-btnPrimary {
+    background-color: #0098AB !important;
+}
