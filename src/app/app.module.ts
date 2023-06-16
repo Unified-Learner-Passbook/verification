@@ -15,7 +15,7 @@ import { environment } from '../environments/environment';
 // }
 
 let configData = {
-  baseUrl: `${environment.baseUrl}/auth`
+  baseUrl: `${environment.baseUrl}/v1/credentials`
 }
 
 
