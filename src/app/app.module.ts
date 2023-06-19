@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,15 +7,13 @@ import { VerifyModule } from 'vc-verification';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { VerifyCertificateComponent } from './verify-certificate/verify-certificate.component';
 import { environment } from '../environments/environment';
+import { AppConfig } from './app.config';
+import { HttpClientModule } from '@angular/common/http';
+import * as config from '../assets/config/config.json';
 
-// let baseConfig = require('../assets/config/config.json')
-
-// let configData = {
-//   baseUrl: baseConfig['baseUrl']
-// }
 
 let configData = {
-  baseUrl: `${environment.baseUrl}/v1/credentials`
+  baseUrl: `${config.bffUrl}/v1/credentials`
 }
 
 
@@ -30,6 +28,7 @@ let configData = {
     AppRoutingModule,
     VerifyModule.forChild(configData),
     ZXingScannerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
