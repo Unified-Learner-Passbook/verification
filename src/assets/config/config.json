@@ -8,9 +8,10 @@
       "configFolder": "/assets/config/ui-config",
       "languageFolder": "/assets/i18n",
       "title": "Organ donation registry",
-      "baseUrl": "http://localhost:4200/registry/api/v1",
+      "baseUrl": "",
+      "bffUrl": "https://ulp.uniteframework.io/ulp-bff",
         "domainName" : "https://demo-nha-donor-registry.xiv.in",
-      "schemaUrl": "http://localhost:4200/registry/api/docs/swagger.json",
+      "schemaUrl": "",
       "footerText": "Organ donation registry",
       "languages": [
       "en"    
