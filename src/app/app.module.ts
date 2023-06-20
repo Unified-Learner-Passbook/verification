@@ -10,6 +10,8 @@ import { environment } from '../environments/environment';
 import { AppConfig } from './app.config';
 import { HttpClientModule } from '@angular/common/http';
 import * as config from '../assets/config/config.json';
+import { ScanQrCodeComponent } from './scan-qr-code/scan-qr-code.component';
+import { QuarModule } from '@altack/quar';
 
 
 let configData = {
@@ -21,13 +23,15 @@ let configData = {
 @NgModule({
   declarations: [
     AppComponent,
-    VerifyCertificateComponent
+    VerifyCertificateComponent,
+    ScanQrCodeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     VerifyModule.forChild(configData),
     ZXingScannerModule,
+    QuarModule,
     HttpClientModule
   ],
   providers: [],
