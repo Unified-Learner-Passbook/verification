@@ -1,7 +1,8 @@
 <div class="ptt-2">
     <div class="chk1 text-center" *ngIf="verified">
         <i class="bi bi-check2-circle"></i>
-        <P>Credential Verified</P>
+        <P *ngIf="!expired">Credential Verified</P>
+        <P *ngIf="expired">Credential Expired</P>
         <div>
             <button type="button" class="btn btn-secondary" (click)="scanAgain()">Verify Another certificate</button>
         </div>
@@ -58,3 +59,5 @@
         <button type="button" class="btn btn-secondary" (click)="scanAgain()">RETRY SCAN</button>
     </div>
 </div>
+
+<app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
