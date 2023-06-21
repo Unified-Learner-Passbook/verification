@@ -12,6 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import * as config from '../assets/config/config.json';
 import { ScanQrCodeComponent } from './scan-qr-code/scan-qr-code.component';
 import { QuarModule } from '@altack/quar';
+import { DocViewComponent } from './doc-view/doc-view.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
 
 
 let configData = {
@@ -24,7 +27,8 @@ let configData = {
   declarations: [
     AppComponent,
     VerifyCertificateComponent,
-    ScanQrCodeComponent
+    ScanQrCodeComponent,
+    DocViewComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ let configData = {
     VerifyModule.forChild(configData),
     ZXingScannerModule,
     QuarModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxExtendedPdfViewerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
