@@ -99,7 +99,7 @@ export class ScanQrCodeComponent implements OnInit {
     
           }, error => {
             this.loader = false
-            this.invalidQRCode = true
+            //this.invalidQRCode = true
             this.notVerified = true
             console.log(error)
           })
@@ -132,16 +132,17 @@ export class ScanQrCodeComponent implements OnInit {
             //this.isScanCompleted = false;
             //this.router.navigate(['/doc-view'], navigationExtras);
           }, (error: any) => {
-            // this.loader = false;
-            // this.invalidQRCode = true;
-            // this.toastService.error("", this.generalService.translateString('INVALID_QR_CODE_OR_ERROR_WHILE_FETCHING_DATA'));
-            //this.restartScanning();
+            this.loader = false;
+            this.notVerified = true
+            //this.invalidQRCode = true;
+            this.restartScanning();
           });
 
         } else {
-          // this.loader = false;
-          // this.invalidQRCode = true;
-          // this.restartScanning();
+          this.loader = false;
+          //this.invalidQRCode = true;
+          this.notVerified = true
+          this.restartScanning();
         }
       } catch (error) {
         this.loader = false;
