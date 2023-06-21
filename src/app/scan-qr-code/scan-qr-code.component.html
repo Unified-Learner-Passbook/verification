@@ -1,41 +1,50 @@
+<div class="text-center" style="margin-top: 10px;">
+    <div class="row px-4">
+        <div class="col-12">
+            <img class="img-fluid" src="../../assets/images/headerlogo1.png" alt="">
+        </div>
+    </div>
+</div>
+
+
+
 <div class="ptt-2">
     <div class="chk1 text-center" *ngIf="verified">
         <i class="bi bi-check2-circle"></i>
-        <P *ngIf="!expired">Credential Verified</P>
-        <P *ngIf="expired">Credential Expired</P>
+        <P *ngIf="!expired" style="font-size: 20px; font-style: italic;">Credential Verified</P>
+        <P *ngIf="expired" style="color: red; font-size: 20px; font-style: italic;">Credential Expired</P>
+        <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
         <div>
-            <button type="button" class="btn btn-secondary" (click)="scanAgain()">Verify Another certificate</button>
+            <button type="button" class="btn" (click)="scanAgain()">Scan Next</button>
         </div>
     </div>
     <div class="chk1 text-center" *ngIf="notVerified">
         <i class="bi bi-x-circle text-danger"></i>
         <P>Credential not Verified</P>
         <div>
-            <button type="button" class="btn btn-secondary" (click)="scanAgain()">Verify Another certificate</button>
+            <button type="button" class="btn" (click)="scanAgain()">Scan Next</button>
         </div>
     </div>
 </div>
 
-<!-- <img src="assets/images/camera.png" alt="" class="img-center" *ngIf="scanQrCode"> -->
-<div class="h-100 d-flex align-items-center justify-content-center flex-column" *ngIf="scanQrCode">
-    <img src="assets/images/scan.png">
-    <div>
-        <button type="button" class="btn btn-secondary" (click)="scan()"><i _ngcontent-ldf-c50="" aria-hidden="true"
-                class="fa fa-qrcode vc-whiteColor vc-faIcon" style="padding-right: 10px"></i>Scan QR Code</button>
+
+<div class="d-flex align-items-center justify-content-center flex-column" *ngIf="scanQrCode">
+    <p class="ver-portal">ULP verification portal</p>
+    <img src="assets/images/image1.png">
+    <p class="scan-ler">Scan learner’s passport to verify</p>
+    <p class="auth-ulp">authenticity of any ULP credential!</p>
+    <div class="scan-btn">
+        <button type="button" class="btn" (click)="scan()">Scan</button>
     </div>
 
-    <div class="alert alert-success" role="alert">
-        <!-- <h4 class="alert-heading">Scan QR-Code</h4> -->
-        <p>To verify certificate, simply scan the QR code thats on the document.</p>
-    </div>
+    
 </div>
 
-<!-- <img src="assets/images/camera.png" *ngIf="!isScanCompleted" alt="" class="img-center"> -->
-<h4 class="text-align" *ngIf="!isScanCompleted">SCAN QR CODE</h4>
+
 
 <div class="scanner" *ngIf="!isScanCompleted">
     <quar-scanner (scanSuccess)="scanSuccessHandler($event)" (scanError)="onError($event)"></quar-scanner>
-    <button type="button" class="btn btn-secondary" (click)="back()" style="margin-left: 33%;
+    <button type="button" class="btn" (click)="back()" style="margin-left: 33%;
     margin-top: 10%;">Back</button>
 </div>
 <div class="text-center mt-5" *ngIf="false">
@@ -60,4 +69,4 @@
     </div>
 </div>
 
-<app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
+<!-- <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view> -->
