@@ -53,24 +53,24 @@ export class ScanQrCodeComponent implements OnInit {
     console.log("event", event);
     if (event) {
 
-      this.dataService.verify(event).subscribe((res: any) => {
-        console.log(res)
-        console.log(res.checks[0].expired)
-        if (res.checks[0].expired == 'OK') {
-          this.loader = false
-          this.verified = true
-        } else {
-          this.loader = false
-          this.verified = true
-          this.expired = true
-        }
+      // this.dataService.verify(event).subscribe((res: any) => {
+      //   console.log(res)
+      //   console.log(res.checks[0].expired)
+      //   if (res.checks[0].expired == 'OK') {
+      //     this.loader = false
+      //     this.verified = true
+      //   } else {
+      //     this.loader = false
+      //     this.verified = true
+      //     this.expired = true
+      //   }
 
-      }, error => {
-        this.loader = false
-        this.invalidQRCode = true
-        this.notVerified = true
-        console.log(error)
-      })
+      // }, error => {
+      //   this.loader = false
+      //   this.invalidQRCode = true
+      //   this.notVerified = true
+      //   console.log(error)
+      // })
 
       try {
         let url: string;
@@ -84,6 +84,26 @@ export class ScanQrCodeComponent implements OnInit {
 
         let credential;
         if (credentialId) {
+
+          this.dataService.verify(credentialId).subscribe((res: any) => {
+            console.log(res)
+            console.log(res.result.checks[0].expired)
+            if (res.result.checks[0].expired == 'OK') {
+              this.loader = false
+              this.verified = true
+            } else {
+              this.loader = false
+              this.verified = true
+              this.expired = true
+            }
+    
+          }, error => {
+            this.loader = false
+            this.invalidQRCode = true
+            this.notVerified = true
+            console.log(error)
+          })
+          
 
           this.credentialService.getToken().pipe(concatMap(_ =>
             this.credentialService.getCredentialById(credentialId).pipe(map(res => {

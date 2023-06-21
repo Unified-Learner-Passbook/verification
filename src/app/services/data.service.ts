@@ -3,16 +3,22 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpOptions } from '../interfaces/httpOptions.interface';
+import * as config from '../../assets/config/config.json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+  baseUrl: string
+  constructor(private readonly httpClient: HttpClient) { 
+    this.baseUrl = config.bffUrl
+  }
 
-  constructor(private readonly httpClient: HttpClient) { }
+  verify(id: string): Observable<any> {
+    //return this.httpClient.get(url)
+     return this.httpClient.get(`${this.baseUrl}/v1/sso/student/credentials/verify/${id}`)
 
-  verify(url: string): Observable<any> {
-    return this.httpClient.get(url)
+
   }
 
   private getHeader(headers?: HttpOptions['headers']): HttpOptions['headers'] {
