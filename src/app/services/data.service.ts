@@ -10,15 +10,12 @@ import * as config from '../../assets/config/config.json';
 })
 export class DataService {
   baseUrl: string
-  constructor(private readonly httpClient: HttpClient) { 
+  constructor(private readonly httpClient: HttpClient) {
     this.baseUrl = config.bffUrl
   }
 
   verify(id: string): Observable<any> {
-    //return this.httpClient.get(url)
-     return this.httpClient.get(`${this.baseUrl}/v1/sso/student/credentials/verify/${id}`)
-
-
+    return this.httpClient.get(`${this.baseUrl}/v1/sso/student/credentials/verify/${id}`)
   }
 
   private getHeader(headers?: HttpOptions['headers']): HttpOptions['headers'] {
@@ -39,7 +36,6 @@ export class DataService {
       };
       return defaultHeaders;
     }
-    
   }
 
   get(requestParam): Observable<any> {

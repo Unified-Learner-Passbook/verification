@@ -84,26 +84,24 @@ export class ScanQrCodeComponent implements OnInit {
 
         let credential;
         if (credentialId) {
-
           this.dataService.verify(credentialId).subscribe((res: any) => {
             console.log(res)
             console.log(res.result.checks[0].expired)
             if (res.result.checks[0].expired == 'OK') {
-              this.loader = false
-              this.verified = true
+              this.loader = false;
+              this.verified = true;
             } else {
-              this.loader = false
-              this.verified = true
-              this.expired = true
+              this.loader = false;
+              this.verified = true;
+              this.expired = true;
             }
-    
+
           }, error => {
-            this.loader = false
+            this.loader = false;
             //this.invalidQRCode = true
-            this.notVerified = true
-            console.log(error)
-          })
-          
+            this.notVerified = true;
+            console.log(error);
+          });
 
           this.credentialService.getToken().pipe(concatMap(_ =>
             this.credentialService.getCredentialById(credentialId).pipe(map(res => {
@@ -125,32 +123,24 @@ export class ScanQrCodeComponent implements OnInit {
           ).subscribe((res: any) => {
             console.log(res)
             //this.loader = false;
-            const navigationExtras = {
-              state: credential
-            };
             this.credential = credential
-            //this.isScanCompleted = false;
-            //this.router.navigate(['/doc-view'], navigationExtras);
           }, (error: any) => {
             this.loader = false;
             this.notVerified = true
-            //this.invalidQRCode = true;
             this.restartScanning();
           });
 
         } else {
           this.loader = false;
-          //this.invalidQRCode = true;
-          this.notVerified = true
+          // this.notVerified = true;
+          this.invalidQRCode = true;
           this.restartScanning();
         }
       } catch (error) {
         this.loader = false;
         this.invalidQRCode = true;
-        // this.toastService.error("", this.generalService.translateString('INVALID_QR_CODE_OR_ERROR_WHILE_FETCHING_DATA'));
         this.restartScanning();
       }
-
     }
   }
 
@@ -166,11 +156,12 @@ export class ScanQrCodeComponent implements OnInit {
 
   scanAgain() {
     this.restartScanning();
-    this.invalidQRCode = false
+    this.invalidQRCode = false;
     this.isScanCompleted = false;
     this.verified = false;
-    this.notVerified = false
-    this.credential = false
+    this.notVerified = false;
+    this.credential = false;
+    this.expired = false;
   }
 
   scan() {
@@ -180,10 +171,11 @@ export class ScanQrCodeComponent implements OnInit {
   }
 
   back() {
-    this.scanQrCode = true
+    this.scanQrCode = true;
     this.isScanCompleted = true;
-    this.verified = false
-    this.notVerified = false
+    this.verified = false;
+    this.notVerified = false;
+    this.expired = false;
   }
 
 

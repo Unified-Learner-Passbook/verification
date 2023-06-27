@@ -72,7 +72,7 @@ export class DocViewComponent implements OnInit {
         return this.dataService.get({url: `${this.baseUrl}/v1/sso/student/credentials/rendertemplateschema/${id}`}).pipe(
             map((res: any) => {
                 if (res.result.length > 1) {
-                    const selectedLangKey = localStorage.getItem('setLanguage');
+                    const selectedLangKey = 'en';
                     const certExpireTime = new Date(this.credential.expirationDate).getTime();
                     const currentDateTime = new Date().getTime();
                     const isExpired = certExpireTime < currentDateTime;
