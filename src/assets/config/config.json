@@ -1,7 +1,7 @@
 {
       "environment": "development",
       "keycloak": {
-            "url": "https://dev-ulp.uniteframework.io/auth",
+            "url": "https://ulp.uniteframework.io/auth",
             "clientId": "registry-frontend",
             "realm": "sunbird-rc"
       },
@@ -9,8 +9,8 @@
       "languageFolder": "/assets/i18n",
       "title": "ULP Verification Portal",
       "baseUrl": "",
-      "bffUrl": "https://dev-ulp.uniteframework.io/ulp-bff",
-      "domainName": "https://demo-nha-donor-registry.xiv.in",
+      "bffUrl": "https://ulp.uniteframework.io/ulp-bff",
+      "domainName": "https://ulp.uniteframework.io",
       "schemaUrl": "",
       "footerText": "ULP Verification Portal",
       "languages": [
