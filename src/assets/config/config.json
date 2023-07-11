@@ -1,17 +1,17 @@
 {
       "environment": "development",
       "keycloak": {
-            "url": "https://ulp.uniteframework.io/auth",
+            "url": "https://ulp-test.sunbirdrc.dev/ulp-bff/auth",
             "clientId": "registry-frontend",
             "realm": "sunbird-rc"
       },
       "configFolder": "/assets/config/ui-config",
       "languageFolder": "/assets/i18n",
       "title": "ULP Verification Portal",
-      "baseUrl": "",
-      "bffUrl": "https://ulp.uniteframework.io/ulp-bff",
-      "domainName": "https://ulp.uniteframework.io",
-      "schemaUrl": "",
+      "baseUrl": "https://ulp-test.sunbirdrc.dev/ulp-bff/registry",
+      "bffUrl": "https://ulp-test.sunbirdrc.dev/ulp-bff",
+      "domainName": "",
+      "schemaUrl": "https://ulp-test.sunbirdrc.dev/ulp-bff/registry/api/docs/swagger.json",
       "footerText": "ULP Verification Portal",
       "languages": [
             "en"
