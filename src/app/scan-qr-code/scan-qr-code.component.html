@@ -1,0 +1,69 @@
+<div class="text-center mt-4">
+    <div class="row px-4">
+        <div class="col-12">
+            <img class="img-fluid" src="assets/images/headerlogo1.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="container text-center">
+
+    <div class="ptt-2">
+        <div class="chk1 text-center" *ngIf="verified">
+            <i *ngIf="!expired" class="bi bi-check2-circle"></i>
+            <p *ngIf="!expired" class="fs-20">Credential Verified</p>
+            <i *ngIf="expired" class="bi bi-x-circle text-danger"></i>
+            <p *ngIf="expired" class=" fs-20">Credential Expired</p>
+            <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
+            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan Next</button>
+        </div>
+        <div class="chk1 text-center" *ngIf="notVerified">
+            <i class="bi bi-x-circle text-danger"></i>
+            <P>Credential not Verified</P>
+            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan Next</button>
+        </div>
+        <div class="chk1 text-center" *ngIf="invalidQRCode">
+            <i *ngIf="invalidQRCode" class="bi bi-x-circle text-danger"></i>
+            <p *ngIf="invalidQRCode" class="fs-20">Invalid QR code</p>
+            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan Next</button>
+        </div>
+    </div>
+
+
+    <div class="text-center" *ngIf="scanQrCode">
+        <h4 class="ver-portal">ULP verification portal</h4>
+        <img src="assets/images/image1.png">
+        <p class="scan-ler">Scan learner’s passport to verify authenticity of any ULP credential!</p>
+        <div class="scan-btn">
+            <button type="button" class="btn btn-primary" (click)="scan()">Scan</button>
+        </div>
+    </div>
+
+
+
+    <div class="scanner text-center" *ngIf="!isScanCompleted">
+        <quar-scanner (scanSuccess)="scanSuccessHandler($event)" (scanError)="onError($event)"></quar-scanner>
+    </div>
+    <button type="button" class="btn btn-primary mt-4 mb-3" *ngIf="!isScanCompleted" (click)="back()">Back</button>
+    <div class="text-center mt-5" *ngIf="false">
+        <img src="assets/images/flash.png" alt="" class="pr-4">
+        <img src="assets/images/frontcamera.png" alt="">
+    </div>
+    <div class="scan-result" *ngIf="loader">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border">
+                <span class="sr-only">LOADING</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="h-100 d-flex align-items-center justify-content-center flex-column" *ngIf="invalidQRCode">
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Invalid QR-Code</h4>
+            <p>Please scan valid QR Code</p>
+        </div>
+        <div>
+            <button type="button" class="btn btn-secondary" (click)="scanAgain()">RETRY SCAN</button>
+        </div>
+    </div> -->
+</div>

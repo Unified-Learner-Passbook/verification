@@ -24,11 +24,11 @@ export class VerifyCertificateComponent implements OnInit {
     {
       "scanner_type": "ZBAR_QRCODE",
       "showResult": [
-        { "title": "Name", "path": "name" },
-        { "title": "Gender", "path": "gender" },
-        { "title": "Institute", "path": "institute" },
-        { "title": "AcademicYear", "path": "academicYear" },
-        { "title": "RollNo", "path": "rollNo" },
+        { "title": "Name", "path": "credentialSubject.name" },
+        { "title": "Gender", "path": "credentialSubject.gender" },
+        { "title": "Institute", "path": "credentialSubject.institute" },
+        { "title": "AcademicYear", "path": "credentialSubject.academicYear" },
+        { "title": "RollNo", "path": "credentialSubject.rollNo" },
       
       ],
       "scanNote": "To verify certificate, simply scan the QR code thats on the document.",
