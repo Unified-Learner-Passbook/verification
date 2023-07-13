@@ -167,6 +167,7 @@ textarea.form-control {
     border: 0 !important;
 
 }
+
 .vc-btnPrimary {
     background: #D9552B !important;
 }
@@ -350,15 +351,18 @@ $primary-color-dark: #000;
 
 html,
 body {
-    height: 100%;
+    // height: 100%;
+
 }
 
 body {
     margin: 0;
     // font-family: "Lato", sans-serif !important;
-    font-family: 'Roboto', sans-serif !important;
+    // font-family: 'Roboto', sans-serif !important;
+    font-family: "Poppins", sans-serif !important;
     color: rgb(0, 0, 0);
     background: var(--bodyBackground) !important;
+    // overflow-x: hidden !important;
 }
 
 .fs-7 {
@@ -1195,12 +1199,12 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 20px !important;
 }
 
-@media screen and (max-device-width:1200px),
-screen and (max-width:1400px) {
-    .container {
-        width: 78% !important;
-    }
-}
+// @media screen and (max-device-width:1200px),
+// screen and (max-width:1400px) {
+//     .container {
+//         width: 78% !important;
+//     }
+// }
 
 .size-bts {
     width: 135px;
@@ -1460,17 +1464,18 @@ formly-multi-schema-type .card {
     background-color: #b0b8b3;
 }
 
-.form-check-input:disabled  {
+.form-check-input:disabled {
     opacity: 0.2 !important;
 }
 
-.mlf-14{
+.mlf-14 {
     margin-left: -14px !important;
 }
 
 :disabled {
     opacity: 0.4;
-  }
-.vc-btnPrimary{
+}
+
+.vc-btnPrimary {
     background-color: #0098AB !important;
 }
