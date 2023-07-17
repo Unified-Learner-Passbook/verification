@@ -9,6 +9,7 @@
 @import "https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,600&display=swap";
 @import "https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Convergence&family=DM+Sans:wght@400;500;700&family=EB+Garamond&family=Inter&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /* Importing Bootstrap SCSS file. */
 
@@ -361,8 +362,9 @@ body {
     // font-family: 'Roboto', sans-serif !important;
     font-family: "Poppins", sans-serif !important;
     color: rgb(0, 0, 0);
-    background: var(--bodyBackground) !important;
+    // background: var(--bodyBackground) !important;
     // overflow-x: hidden !important;
+    background: #fff !important;
 }
 
 .fs-7 {
@@ -1479,3 +1481,10 @@ formly-multi-schema-type .card {
 .vc-btnPrimary {
     background-color: #0098AB !important;
 }
+#viewerContainer{
+    background: #fff !important;
+}
+// .canvasWrapper canvas {
+//     width: 274px !important;
+//     height: 374px !important;
+// }
