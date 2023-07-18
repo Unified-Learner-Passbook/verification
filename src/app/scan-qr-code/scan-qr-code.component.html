@@ -1,7 +1,7 @@
 <div class="container text-center">
     <div class="text-center" *ngIf="scanQrCode">
         <h4 class="ver-portal">ULP verification portal</h4>
-        <img class="mt-5" src="assets/images/image1.png">
+        <img class="mt-5" src="assets/images/scanner.png" alt="scanner">
         <p class="scan-ler text-center">{{'SCAN_LEARNER_PASSPORT' | translate}}</p>
         <div class="scan-btn">
             <button type="button" class="btn-scan" (click)="scan()">{{'SCAN_NOW' | translate}}</button>
@@ -33,7 +33,7 @@
             <P class="verify pt-1">{{'CREDENTIAL_NOT_VERIFIED' | translate}}</P>
         </div>
         <div class="chk1 text-center" *ngIf="invalidQRCode">
-            <i class="bi bi-x-circle text-danger"></i>
+            <img src="assets/icons/cross.svg" alt="cross">
             <p class="fs-20">{{'INVALID_QR_CODE' | translate}}</p>
         </div>
         <ng-container *ngIf="verified || notVerified || invalidQRCode">
