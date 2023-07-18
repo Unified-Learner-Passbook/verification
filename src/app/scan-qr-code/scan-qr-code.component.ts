@@ -126,7 +126,7 @@ export class ScanQrCodeComponent implements OnInit {
             this.credential = credential
           }, (error: any) => {
             this.loader = false;
-            this.notVerified = true
+            // this.notVerified = true
             this.restartScanning();
           });
 

@@ -12,7 +12,6 @@
     "e2e": "ng e2e"
   },
   "private": true,
-  "proxy": "https://demo-donor-registry.xiv.in",
   "dependencies": {
     "@ajsf/bootstrap4": "^0.4.0-beta.1",
     "@altack/quar": "0.0.7",
@@ -55,6 +54,7 @@
     "country-state-city": "^3.0.1",
     "iso-639-1": "^2.1.11",
     "jexl": "^2.3.0",
+    "jquery": "^3.5.1",
     "json-refs": "^3.0.4",
     "keycloak-angular": "^8.1.0",
     "keycloak-js": "^11.0.3",
@@ -76,12 +76,11 @@
     "rxjs": "^6.5.4",
     "tslib": "^2.0.0",
     "typescript": "3.9.5",
-    "vc-verification": "./vc-verification-0.0.5.tgz",
+    "vc-verification": "0.0.12",
     "write-json-file": "^5.0.0",
     "z-schema": "^5.0.0",
     "zbar-angular.wasm": "^1.0.0",
-    "zone.js": "~0.10.3",
-    "jquery": "^3.5.1"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.0",
