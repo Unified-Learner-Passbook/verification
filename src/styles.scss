@@ -4,8 +4,8 @@
 @import '~@fortawesome/fontawesome-free/scss/solid.scss';
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
-@import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,700;1,200;1,300;1,400;1,600&display=swap";
 @import "https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -14,7 +14,7 @@
 /* Importing Bootstrap SCSS file. */
 
 @import '~bootstrap/scss/bootstrap';
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 :root {
     // SB-RC
@@ -125,11 +125,6 @@
 
 .bg-primary {
     background-color: var(--primaryColor) !important
-}
-
-.ngx-pagination .current {
-    background: var(--primaryColor) !important;
-    ;
 }
 
 .d-contents {
@@ -543,7 +538,7 @@ formly-field {
     display: block;
 }
 
-@import "~@ng-select/ng-select/themes/default.theme.css";
+// @import "~@ng-select/ng-select/themes/default.theme.css";
 
 [type="file"] {
     height: 0;
@@ -932,58 +927,6 @@ li {
     font-size: 17px;
 }
 
-.sve-live {
-    background-image: url("./assets/images/bg_wall.png");
-    height: 541px;
-    display: flex;
-    align-items: center;
-
-    .sve-content {
-        font-size: 85px;
-        text-align: left;
-        font-weight: bold;
-        color: #fff;
-        line-height: 83px;
-    }
-
-    .one-donor {
-        width: 480px;
-        height: 63px;
-        background-color: #BB5437;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 23px;
-        color: #fff;
-        font-weight: 600;
-    }
-
-    .triangle-left {
-        margin-top: -63px;
-        border-top: 32px solid transparent;
-        border-bottom: 32px solid transparent;
-        left: 28.2rem;
-        position: absolute;
-    }
-
-    .triangle-right {
-
-        border-top: 32px solid transparent;
-        border-bottom: 32px solid transparent;
-        position: absolute;
-    }
-
-
-    .triangle-right {
-        border-left:
-            30px solid #224E24;
-    }
-
-    .triangle-left {
-        border-right:
-            30px solid #224E24;
-    }
-}
 
 .gve {
     color: #fff;
@@ -1286,39 +1229,6 @@ formly-multi-schema-type .card {
         padding: 30px 0;
     }
 
-    .sve-live .sve-content {
-        font-size: 43px;
-        line-height: 58px;
-    }
-
-    .sve-live .one-donor {
-        width: 264px;
-        height: 50px;
-        font-size: 14px;
-    }
-
-    .sve-live .triangle-left {
-        left: 14.9rem;
-        border-right: 27px solid #224E24;
-        border-top: 39px solid transparent;
-        border-bottom: 28px solid transparent;
-    }
-
-    .sve-live .triangle-right {
-        border-left: 23px solid #224E24;
-        border-top: 29px solid transparent;
-        border-bottom: 18px solid transparent;
-    }
-
-    .gve {
-        font-size: 22px;
-        line-height: 30px;
-    }
-
-    .sve-live {
-        height: 430px;
-    }
-
     .ple-anker {
         width: 190px;
         height: 45px;
@@ -1338,13 +1248,6 @@ formly-multi-schema-type .card {
         width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
-    }
-
-    .ngx-pagination {
-        padding-left: 0px !important;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
     }
 
     .pagination-next {
