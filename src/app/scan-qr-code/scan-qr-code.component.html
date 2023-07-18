@@ -1,34 +1,4 @@
-<!-- <div class="text-center mt-4 px-4">
-    <img class="img-fluid" src="assets/images/headerlogo1.png" alt="">
-</div> -->
-
 <div class="container text-center">
-
-    <div class="ptt-2">
-        <div class="chk1 text-center" *ngIf="verified">
-            <img *ngIf="!expired" src="assets/icons/verify.svg" alt="verify">
-            <p *ngIf="!expired" class="verify pt-1">Credential Verified</p>
-            <img *ngIf="expired" src="assets/icons/cross.svg" alt="cross">
-            <p *ngIf="expired" class=" verify pt-1">Credential Expired</p>
-            <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
-            <button *ngIf="isScanCompleted" type="button" class="btn-scan mt-5 mb-3" (click)="scanAgain()">Scan
-                Next</button>
-        </div>
-        <div class="chk1 text-center" *ngIf="notVerified">
-            <img src="assets/icons/cross.svg" alt="cross">
-            <P class="verify pt-1">Credential not Verified</P>
-            <button *ngIf="isScanCompleted" type="button" class="btn-scan mt-5 mb-3" (click)="scanAgain()">Scan
-                Next</button>
-        </div>
-        <div class="chk1 text-center" *ngIf="invalidQRCode">
-            <i *ngIf="invalidQRCode" class="bi bi-x-circle text-danger"></i>
-            <p *ngIf="invalidQRCode" class="fs-20">Invalid QR code</p>
-            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan
-                Next</button>
-        </div>
-    </div>
-
-
     <div class="text-center" *ngIf="scanQrCode">
         <h4 class="ver-portal">ULP verification portal</h4>
         <img class="mt-5" src="assets/images/image1.png">
@@ -46,7 +16,31 @@
         </div>
     </div>
 
-
+    <div class="ptt-2">
+        <div class="chk1 text-center" *ngIf="verified">
+            <ng-container *ngIf="!expired">
+                <img src="assets/icons/verify.svg" alt="verify">
+                <p class="verify pt-1">Credential Verified</p>
+            </ng-container>
+            <ng-container *ngIf="expired">
+                <img src="assets/icons/cross.svg" alt="cross">
+                <p class=" verify pt-1">Credential Expired</p>
+            </ng-container>
+            <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
+        </div>
+        <div class="chk1 text-center" *ngIf="notVerified">
+            <img src="assets/icons/cross.svg" alt="cross">
+            <P class="verify pt-1">Credential not Verified</P>
+        </div>
+        <div class="chk1 text-center" *ngIf="invalidQRCode">
+            <i class="bi bi-x-circle text-danger"></i>
+            <p class="fs-20">Invalid QR code</p>
+        </div>
+        <ng-container *ngIf="verified || notVerified || invalidQRCode">
+            <button *ngIf="isScanCompleted" type="button" class="btn-scan mt-5 mb-3" (click)="scanAgain()">Scan
+                Next</button>
+        </ng-container>
+    </div>
 
     <div class="scanner text-center" *ngIf="!isScanCompleted">
         <quar-scanner (scanSuccess)="scanSuccessHandler($event)" (scanError)="onError($event)"></quar-scanner>
@@ -56,6 +50,7 @@
         <img src="assets/images/flash.png" alt="" class="pr-4">
         <img src="assets/images/frontcamera.png" alt="">
     </div>
+
     <div class="scan-result" *ngIf="loader">
         <div class="d-flex justify-content-center">
             <div class="spinner-border">
@@ -63,14 +58,4 @@
             </div>
         </div>
     </div>
-
-    <!-- <div class="h-100 d-flex align-items-center justify-content-center flex-column" *ngIf="invalidQRCode">
-        <div class="alert alert-danger" role="alert">
-            <h4 class="alert-heading">Invalid QR-Code</h4>
-            <p>Please scan valid QR Code</p>
-        </div>
-        <div>
-            <button type="button" class="btn btn-secondary" (click)="scanAgain()">RETRY SCAN</button>
-        </div>
-    </div> -->
 </div>
