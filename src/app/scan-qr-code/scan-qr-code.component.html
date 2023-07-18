@@ -1,41 +1,48 @@
-<div class="text-center mt-4">
-    <div class="row px-4">
-        <div class="col-12">
-            <img class="img-fluid" src="assets/images/headerlogo1.png" alt="">
-        </div>
-    </div>
-</div>
+<!-- <div class="text-center mt-4 px-4">
+    <img class="img-fluid" src="assets/images/headerlogo1.png" alt="">
+</div> -->
 
 <div class="container text-center">
 
     <div class="ptt-2">
         <div class="chk1 text-center" *ngIf="verified">
-            <i *ngIf="!expired" class="bi bi-check2-circle"></i>
-            <p *ngIf="!expired" class="fs-20">Credential Verified</p>
-            <i *ngIf="expired" class="bi bi-x-circle text-danger"></i>
-            <p *ngIf="expired" class=" fs-20">Credential Expired</p>
+            <img *ngIf="!expired" src="assets/icons/verify.svg" alt="verify">
+            <p *ngIf="!expired" class="verify pt-1">Credential Verified</p>
+            <img *ngIf="expired" src="assets/icons/cross.svg" alt="cross">
+            <p *ngIf="expired" class=" verify pt-1">Credential Expired</p>
             <app-doc-view [credential]="credential" *ngIf="credential"></app-doc-view>
-            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan Next</button>
+            <button *ngIf="isScanCompleted" type="button" class="btn-scan mt-5 mb-3" (click)="scanAgain()">Scan
+                Next</button>
         </div>
         <div class="chk1 text-center" *ngIf="notVerified">
-            <i class="bi bi-x-circle text-danger"></i>
-            <P>Credential not Verified</P>
-            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan Next</button>
+            <img src="assets/icons/cross.svg" alt="cross">
+            <P class="verify pt-1">Credential not Verified</P>
+            <button *ngIf="isScanCompleted" type="button" class="btn-scan mt-5 mb-3" (click)="scanAgain()">Scan
+                Next</button>
         </div>
         <div class="chk1 text-center" *ngIf="invalidQRCode">
             <i *ngIf="invalidQRCode" class="bi bi-x-circle text-danger"></i>
             <p *ngIf="invalidQRCode" class="fs-20">Invalid QR code</p>
-            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan Next</button>
+            <button *ngIf="isScanCompleted" type="button" class="btn btn-primary mt-3 mb-3" (click)="scanAgain()">Scan
+                Next</button>
         </div>
     </div>
 
 
     <div class="text-center" *ngIf="scanQrCode">
         <h4 class="ver-portal">ULP verification portal</h4>
-        <img src="assets/images/image1.png">
-        <p class="scan-ler">Scan learner’s passport to verify authenticity of any ULP credential!</p>
+        <img class="mt-5" src="assets/images/image1.png">
+        <p class="scan-ler text-center">Scan learner’s passport to verify authenticity of any ULP credential !</p>
         <div class="scan-btn">
-            <button type="button" class="btn btn-primary" (click)="scan()">Scan</button>
+            <button type="button" class="btn-scan" (click)="scan()">Scan Now</button>
+        </div>
+
+        <div class="or mt-4">OR</div>
+        <div class="container">
+            <p class="scan-ler text-center">If you are a ULP Benefit Provider, Please Click here!</p>
+            <div class="scan-btn d-flex justify-content-center">
+                <button type="button" class="btn-scan mb-5">Click here</button>
+            </div>
         </div>
     </div>
 
@@ -44,7 +51,7 @@
     <div class="scanner text-center" *ngIf="!isScanCompleted">
         <quar-scanner (scanSuccess)="scanSuccessHandler($event)" (scanError)="onError($event)"></quar-scanner>
     </div>
-    <button type="button" class="btn btn-primary mt-4 mb-3" *ngIf="!isScanCompleted" (click)="back()">Back</button>
+    <button type="button" class="btn-scan mt-4 mb-3" *ngIf="!isScanCompleted" (click)="back()">Go Back</button>
     <div class="text-center mt-5" *ngIf="false">
         <img src="assets/images/flash.png" alt="" class="pr-4">
         <img src="assets/images/frontcamera.png" alt="">

@@ -32,7 +32,6 @@
     top: -1px;
     right: -1px;
     bottom: -1px;
-    border: 1px solid #f4fff3;
     pointer-events: none;
 }
 .img-center {
@@ -67,24 +66,24 @@ h4.text-align {
     color: #2db4a7;
 }
 .ver-portal {
-    // font-size: 25px;
-    // font-style: italic;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    font-weight: bold;
-    text-transform: capitalize;
-    color: #050c44;
+    font-size: 24px;
+    margin: 25px 0;
+    font-weight: 600;
+    color: #090763;
+    font-family: 'Poppins', sans-serif;
 }
 .scan-ler {
     margin-top: 25px;
-    font-size: 18px;
-    // font-style: italic;
+    font-size: 16px;
+    color: #434343;
+    font-weight: 600;
+    font-family: 'Urbanist', sans-serif;
 }
 .auth-ulp {
     font-size: 18px;
 }
 .scan-btn {
-    margin-top: 50px;
+    margin-top: 33px;
 }
 
 .btn {
@@ -98,4 +97,46 @@ p {
 
 .fs-20 {
     font-size: 20px;
+}
+.btn-scan{
+    background: #060461;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.6rem 6rem;
+    font-family: 'Urbanist', sans-serif;
+    border-radius: 6px;
+}
+.or{
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #D8DADC;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.or::before{
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 2px;
+    background: #D8DADC;
+    margin-right: 5px;
+}
+.or::after{
+    content: "";
+    display: inline-block;
+    width: 40%;
+    height: 2px;
+    background: #D8DADC;    
+    margin-left: 5px;
+}
+.verify{
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
