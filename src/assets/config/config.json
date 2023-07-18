@@ -10,15 +10,16 @@
       "title": "ULP Verification Portal",
       "baseUrl": "",
       "bffUrl": "https://devulp.uniteframework.io/ulp-bff",
-      "domainName": "https://ulp.uniteframework.io",
+      "domainName": "https://dev-verify.uniteframework.io",
       "schemaUrl": "",
       "footerText": "ULP Verification Portal",
       "languages": [
-            "en"
+            "en",
+            "hi"
       ],
       "appType": "attestation",
       "default_theme": {
-            "logoPath": "../../assets/images/NOTTO_WITH_TXT_LOGO.svg",
+            "logoPath": "/assets/images/logo.png",
             "primaryColor": "#1987B6",
             "secondaryColor": "#1987B6",
             "bodyBackground": "#F6F8FC",
@@ -34,7 +35,7 @@
             "cardBorder": "#00000020"
       },
       "dark_theme": {
-            "logoPath": "../../assets/images/NOTTO_WITH_TXT_LOGO.svg",
+            "logoPath": "/assets/images/logo.png",
             "primaryColor": "#1987B6",
             "secondaryColor": "#1987B6",
             "bodyBackground": "#080808",
