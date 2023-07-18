@@ -28,7 +28,7 @@ node() {
         '''
         if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') {
             sh '''
-            docker build -t $docker_server/$docker_repo:latest .
+            docker build -t $docker_server/$docker_repo:main .
             '''
         }
     }
@@ -39,13 +39,13 @@ node() {
         '''
         if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') {
             sh '''
-            docker push $docker_server/$docker_repo:latest
+            docker push $docker_server/$docker_repo:main
             '''
         }
     }
     stage('Start deploy job with latest tag') {
         if (env.BRANCH_NAME == 'main' || env.BRANCH_NAME == 'master') { 
-                build job: 'ULP/deploy-staging/deploy-verify/', parameters: [string(name: 'tag', value: 'latest')]
+                build job: 'ULP/deploy-staging/deploy-verify/', parameters: [string(name: 'tag', value: 'main')]
         }
     }
 }
