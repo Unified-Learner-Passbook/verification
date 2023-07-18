@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { concatMap, map } from 'rxjs/operators';
 import { QuarComponent } from '@altack/quar';
-import { DataService } from '../services/data.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { concatMap, map } from 'rxjs/operators';
 import { CredentialService } from '../services/credential/credential.service';
-import { throwError } from 'rxjs';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-scan-qr-code',
@@ -29,10 +28,17 @@ export class ScanQrCodeComponent implements OnInit {
     private readonly router: Router,
     private readonly dataService: DataService,
     private readonly credentialService: CredentialService
-  ) { }
+  ) {
+    const navigation = this.router.getCurrentNavigation();
+    const state = { ...navigation.extras.state };
+
+    if (state.showScanner) {
+      this.scanQrCode = false;
+      this.isScanCompleted = false;
+    }
+  }
 
   ngOnInit(): void {
-    this.scanQrCode = true
     this.verified = false;
     this.expired = false;
     this.notVerified = false;
@@ -167,6 +173,12 @@ export class ScanQrCodeComponent implements OnInit {
     this.notVerified = false;
     this.credential = false;
     this.expired = false;
+
+    const navigationExtras: NavigationExtras = {
+      state: { showScanner: true }
+    };
+
+    this.router.navigate(['/'], navigationExtras);
   }
 
   scan() {
@@ -181,5 +193,6 @@ export class ScanQrCodeComponent implements OnInit {
     this.verified = false;
     this.notVerified = false;
     this.expired = false;
+    this.router.navigate(['/']);
   }
 }
