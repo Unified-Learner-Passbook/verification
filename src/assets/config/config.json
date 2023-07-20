@@ -1,7 +1,7 @@
 {
       "environment": "development",
       "keycloak": {
-            "url": "https://devulp.uniteframework.io/auth",
+            "url": "http://localhost:8080/auth",
             "clientId": "registry-frontend",
             "realm": "sunbird-rc"
       },
@@ -9,7 +9,7 @@
       "languageFolder": "/assets/i18n",
       "title": "ULP Verification Portal",
       "baseUrl": "",
-      "bffUrl": "https://devulp.uniteframework.io/ulp-bff",
+      "bffUrl": "http://localhost:3000",
       "domainName": "https://dev-verify.uniteframework.io",
       "schemaUrl": "",
       "footerText": "ULP Verification Portal",
