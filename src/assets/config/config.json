@@ -8,10 +8,10 @@
       "configFolder": "/assets/config/ui-config",
       "languageFolder": "/assets/i18n",
       "title": "ULP Verification Portal",
-      "baseUrl": "",
+      "baseUrl": "https://uatulp.uniteframework.io/registry",
       "bffUrl": "https://uatulp.uniteframework.io/ulp-bff",
-      "domainName": "https://dev-verify.uniteframework.io",
-      "schemaUrl": "",
+      "domainName": "https://uat-verify.uniteframework.io",
+      "schemaUrl": "https://uatulp.uniteframework.io/registry/api/docs/swagger.json",
       "footerText": "ULP Verification Portal",
       "languages": [
             "en",
