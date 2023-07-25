@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable, of } from 'rxjs';
-import { concatMap, map, switchMap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
 // import { AuthService } from '../auth/auth.service';
-import { DataService } from '../data.service';
-import { environment } from 'src/environments/environment';
 import * as config from '../../../assets/config/config.json';
+import { DataService } from '../data.service';
 
 
 @Injectable({
@@ -102,7 +101,9 @@ export class CredentialService {
 
   getToken(): Observable<any> {
     const payload = { url: `${this.baseUrl}/v1/sbrc/token`, data: { "password": "test@4321"} };
-    return this.dataService.post(payload).pipe(map((res: any) => {
+    return this.dataService.post(payload).pipe(
+      shareReplay(1),
+      map((res: any) => {
       localStorage.setItem('token', res['token']);
     }));
   }
