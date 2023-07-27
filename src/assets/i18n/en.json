@@ -215,5 +215,14 @@
   "INVALID_QR_CODE": "Invalid QR code",
   "SCAN_NEXT": "Scan Next",
   "GO_BACK": "Go Back",
-  "CLICK_HERE": "Click here"
+  "CLICK_HERE": "Click here",
+  "WELCOME_TO_TATA_TRUST":"Welcome Tata Trust !",
+  "SCAN_LEARNER":"Scan learner’s credentials to verify their eligibility for Tata Trust - Books Distribution",
+  "YOU_CAN_VIEW":"You can view the Benefit Distribution Report below",
+  "CREDENTIALS_VERIFIED":"Credentials Verified and Eligible",
+  "CREDENTIALS_NOT_ELIGIBLE":"Credentials not eligible for the benefit",
+  "STUDENT_HAS_ALREADY":"Student has Already availed benefit",
+  "CLICK_HERE_TO":"Click here to record benefit distribution to Student ID 123",
+  "THANKS":"Thanks",
+  "BENEFIT_HANDOVER":"Benefit handover has been recorded"
 }

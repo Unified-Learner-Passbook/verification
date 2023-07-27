@@ -1,0 +1,58 @@
+<div class="container mb-5">
+    <div class="flex-center">
+        <div class="title-benefits text-b mt-5">ULP Benefits</div>
+    </div>
+
+    <div class="flex-center mt-4">
+        <img src="assets/icons/verify.svg" *ngIf="verificationStatus === 'verified'" alt="verify">
+        <img src="assets/icons/cross.svg" *ngIf="verificationStatus === 'notEligible'" alt="valid">
+        <img src="assets/icons/valid.svg" *ngIf="verificationStatus === 'availedBenefit'" alt="availedBenefit">
+    </div>
+    <div class="fw-600 fs-14 text-black text-center mt-3">
+        <span *ngIf="verificationStatus === 'verified'"> {{'CREDENTIALS_VERIFIED' | translate}}</span>
+        <span *ngIf="verificationStatus === 'notEligible'"> {{'CREDENTIALS_NOT_ELIGIBLE' | translate}}</span>
+        <span *ngIf="verificationStatus === 'availedBenefit'"> {{'STUDENT_HAS_ALREADY' | translate}}</span>
+    </div>
+    <div *ngFor="let item of verification">
+        <div class="box-sh mt-4 flex-center align-items-center">
+            <div class="d-flex justify-content-between w-100">
+                <div>
+                    {{item.title }}
+                </div>
+                <span>
+                    <img src="assets/icons/right.svg" alt="right">
+                </span>
+
+                <!-- for cross icon  -->
+
+                <!-- <span>
+                    <img src="assets/icons/cross1.svg" alt="">
+                </span> -->
+
+            </div>
+        </div>
+    </div>
+    <div class="box-sh mt-4 flex-center align-items-center">
+        <div>
+            <div>
+                 
+            </div>
+            <div class="flex-center">
+                <button data-toggle="modal" data-target="#exampleModal" routerLink="/verification" type="button"
+                    class="btn-scan mt-3 Urbanist">{{'SCAN_NOW' | translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered d-flex justify-content-center">
+        <div class="modal-content w-60">
+            <div class="modal-body">
+                <div class="text-center fs-14 text-black fw-500 text-dec"> {{'THANKS' | translate}}</div>
+                <div class="text-center fs-14 text-black">{{'BENEFIT_HANDOVER' | translate}}</div>
+            </div>
+        </div>
+    </div>
+</div>

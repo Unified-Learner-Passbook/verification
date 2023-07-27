@@ -79,6 +79,9 @@
 .nav-link-color {
     color: var(--navlinkColor) !important;
 }
+.Urbanist{
+    font-family: 'Urbanist';
+}
 
 
 .tagstextColor {
@@ -365,6 +368,12 @@ body {
 .fs-7 {
     font-size: 0.8rem;
 }
+.text-sub{
+    color: #434343;
+}
+.text-b{
+    color: #090763;
+}
 
 .fs-8 {
     font-size: 0.7rem;
@@ -373,23 +382,59 @@ body {
 .fs-14 {
     font-size: 14px;
 }
-
+.line-22{
+    line-height: 22px;
+}
+.btn-scan{
+    background: #060461;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.6rem 4.4rem;
+    font-family: 'Urbanist', sans-serif;
+    border-radius: 6px;
+}
+.text-dec{
+    text-decoration: underline;
+}
 .fs-16p {
     font-size: 16px;
 }
-
+.w-60{
+    width: 68% !important;
+}
+.fw-500{
+    font-weight: 500;
+}
 .fs-18p {
     font-size: 18px;
+}
+.fs-21 {
+    font-size: 21px;
 }
 
 .fs-24 {
     font-size: 18px;
 }
+.fs-28 {
+    font-size: 28px !important;
+}
 
 .w-70 {
     width: 70% !important;
 }
-
+.fw-600{
+    font-weight: 600;
+}
+.title-benefits{
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: center;
+    border-bottom: 1px solid #090763;
+    display: inline-block;
+    text-align: center;
+}
 a {
     text-decoration: none !important;
     // color: var(--linkColor) !important;
@@ -1185,7 +1230,6 @@ formly-multi-schema-type .card {
     display: inline-block;
     white-space: nowrap;
 }
-
 @media (max-width:600px) {
     .head-holder {
         flex-direction: column;
@@ -1391,3 +1435,14 @@ formly-multi-schema-type .card {
 //     width: 274px !important;
 //     height: 374px !important;
 // }
+.ver-portal {
+    font-size: 24px;
+    margin: 25px 0;
+    font-weight: 600;
+    color: #090763;
+    font-family: 'Poppins', sans-serif;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+  }

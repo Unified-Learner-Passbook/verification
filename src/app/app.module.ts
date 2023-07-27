@@ -13,6 +13,9 @@ import { ScanQrCodeComponent } from './scan-qr-code/scan-qr-code.component';
 
 import ISO6391 from 'iso-639-1';
 import * as config from '.././assets/config/config.json';
+import { OrganizationComponent } from './organization/organization.component';
+import { VerificationComponent } from './verification/verification.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -22,7 +25,10 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     ScanQrCodeComponent,
-    DocViewComponent
+    DocViewComponent,
+    OrganizationComponent,
+    VerificationComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
