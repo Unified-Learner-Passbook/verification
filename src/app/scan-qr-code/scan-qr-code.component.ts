@@ -65,6 +65,7 @@ export class ScanQrCodeComponent implements OnInit {
 
   scanSuccessHandler(event: any) {
     this.loader = true;
+    event = event.replace(/['"]/g, '');
     this.qrString = event;
     this.isScanCompleted = true;
     console.log("event", event);
