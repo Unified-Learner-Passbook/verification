@@ -38,7 +38,7 @@ export class DocViewComponent implements OnInit {
         //private authService: AuthService,
         private activatedRoute: ActivatedRoute,
         private dataService: DataService
-        
+
     ) {
         this.baseUrl = config.bffUrl;
         // const navigation = this.router.getCurrentNavigation();
@@ -55,10 +55,10 @@ export class DocViewComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        if (this.credential?.credential_schema) {
-            this.schemaId = this.credential.schemaId;
+        if (this.credential?.credentialSchemaId) {
+            this.schemaId = this.credential.credentialSchemaId;
             this.getTemplate(this.schemaId).subscribe((res) => {
-                this.templateId = res?.id;
+                this.templateId = res?.templateId;
                 this.getPDF(res?.template);
             });
         } else {
@@ -66,10 +66,16 @@ export class DocViewComponent implements OnInit {
         }
     }
 
-    
+
 
     getTemplate(id: string): Observable<any> {
-        return this.dataService.get({url: `${this.baseUrl}/v1/sso/student/credentials/rendertemplateschema/${id}`}).pipe(
+        const payload = {
+            url: `${this.baseUrl}/v1/credential/schema/template/list`,
+            data: {
+                "schema_id": id
+            }
+        }
+        return this.dataService.post(payload).pipe(
             map((res: any) => {
                 if (res.result.length > 1) {
                     const selectedLangKey = 'en';
@@ -109,13 +115,11 @@ export class DocViewComponent implements OnInit {
         delete this.credential.credential_schema;
         delete this.credential.schemaId;
         const request = {
-            credential: this.credential,
-            schema: credential_schema,
-            template: template,
-            output: "HTML"
+            credentialid: this.credential.id,
+            templateid: this.templateId,
         }
         // delete request.credential.credentialSubject;
-        this.http.post(`${this.baseUrl}/v1/sso/student/credentials/render`, request, requestOptions).pipe(map((data: any) => {
+        this.http.post(`${this.baseUrl}/v1/credentials/render`, request, requestOptions).pipe(map((data: any) => {
             this.blob = new Blob([data], {
                 type: 'application/pdf' // must match the Accept type
             });
@@ -147,7 +151,7 @@ export class DocViewComponent implements OnInit {
     //     document.body.appendChild(link);
     //     link.click();
     //     document.body.removeChild(link);
-        
+
     // }
 
     // shareFile() {
@@ -170,6 +174,6 @@ export class DocViewComponent implements OnInit {
     //     }
     // }
 
-    
+
 
 }

@@ -33,7 +33,7 @@ export class CredentialService {
   }
 
   getCredentialSchemaId(credentialId: string): Observable<any> {
-    const payload = { url: `${this.baseUrl}/v1/sso/student/credentials/schema/${credentialId}` };
+    const payload = { url: `${this.baseUrl}/v1/credentials/schema/${credentialId}` };
     return this.dataService.get(payload).pipe(map((res: any) => res.result));
   }
 
@@ -55,7 +55,7 @@ export class CredentialService {
       return of(schema);
     }
 
-    const payload = { url: `${this.baseUrl}/v1/sso/student/credentials/schema/json/${schemaId}` };
+    const payload = { url: `${this.baseUrl}/v1/credentials/schema/json/${schemaId}` };
     return this.dataService.get(payload).pipe(map((res: any) => {
       this.schemas.push(res.result);
       return res.result;
@@ -95,7 +95,7 @@ export class CredentialService {
    * @returns 
    */
   getCredentialById(credentialId: string): Observable<any> {
-    const payload = { url: `${this.baseUrl}/v1/credentials/get/${credentialId}` };
+    const payload = { url: `${this.baseUrl}/v1/credentials/json/${credentialId}` };
     return this.dataService.get(payload);
   }
 
