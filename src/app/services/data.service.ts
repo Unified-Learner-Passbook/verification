@@ -15,7 +15,7 @@ export class DataService {
   }
 
   verify(id: string): Observable<any> {
-    return this.httpClient.get(`${this.baseUrl}/v1/sso/student/credentials/verify/${id}`)
+    return this.httpClient.get(`${this.baseUrl}/v1/credentials/verify/${id}`)
   }
 
   private getHeader(headers?: HttpOptions['headers']): HttpOptions['headers'] {

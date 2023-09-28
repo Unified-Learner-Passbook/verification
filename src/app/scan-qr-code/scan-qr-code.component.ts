@@ -1,7 +1,7 @@
 import { QuarComponent } from '@altack/quar';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
-import { concatMap, map } from 'rxjs/operators';
+import { concatMap, map, switchMap } from 'rxjs/operators';
 import { CredentialService } from '../services/credential/credential.service';
 import { DataService } from '../services/data.service';
 
@@ -127,28 +127,13 @@ export class ScanQrCodeComponent implements OnInit {
   }
 
   fetchCredential(credentialId: string) {
-    let credential;
-    this.credentialService.getToken().pipe(concatMap(_ =>
+    this.credentialService.getToken().pipe(switchMap(_ =>
       this.credentialService.getCredentialById(credentialId).pipe(map(res => {
-        credential = res;
-        console.log("res", res);
-        return res;
-      }))),
-      concatMap(_ => this.credentialService.getCredentialSchemaId(credentialId)),
-      concatMap((res: any) => {
-        console.log("res", res);
-        credential.schemaId = res.credential_schema;
-        return this.credentialService.getSchema(res.credential_schema).pipe(
-          map((schema: any) => {
-            credential.credential_schema = schema;
-            return credential;
-          })
-        );
-      })
+        return res.result;
+      })))
     ).subscribe((res: any) => {
-      console.log(res)
       this.loader = false;
-      this.credential = credential
+      this.credential = res;
     }, (error: any) => {
       this.loader = false;
       // this.notVerified = true;
