@@ -9,8 +9,8 @@
       "languageFolder": "/assets/i18n",
       "title": "ULP Verification Portal",
       "baseUrl": "",
-      "bffUrl": "https://ulp.tekdinext.com/auth/ulp-bff",
-      "domainName": "https://dev-verify.uniteframework.io",
+      "bffUrl": "https://ulp.tekdinext.com/ulp-bff",
+      "domainName": "https://ulp-verify.tekdinext.com",
       "schemaUrl": "",
       "footerText": "ULP Verification Portal",
       "languages": [
